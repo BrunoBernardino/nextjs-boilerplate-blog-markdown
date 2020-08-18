@@ -1,0 +1,73 @@
+@import '__variables';
+
+.main {
+  &__section {
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    border-bottom: 5px solid $color-pink;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+  }
+
+  &__description {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+
+    strong {
+      font-weight: bold;
+    }
+  }
+
+  &__article-list {
+    @media #{$bigger-screen} {
+      @include flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin-top: 3rem;
+      border-top: 5px solid $color-pink;
+      padding-top: 1rem;
+
+      a {
+        color: $color-pink;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-purple;
+        }
+      }
+
+      @media #{$bigger-screen} {
+        margin: 1rem;
+        max-width: 30%;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import '__variables';
+
+.article {
+  &__section {
+    margin: 2rem auto;
+    padding-bottom: 2rem;
+    border-bottom: 5px solid $color-pink;
+
+    &:last-of-type {
+      border: none;
+    }
+  }
+}

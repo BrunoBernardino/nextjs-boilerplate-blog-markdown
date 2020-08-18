@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "scope": "brn",
+  "alias": ["markdown-blog-nextjs-boilerplate.brn.sh"],
+  "github": {
+    "enabled": false
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "NODE_PATH": "/",
+    "API_URL": "https://markdown-blog-nextjs-boilerplate.brn.sh"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production",
+      "NODE_PATH": "/",
+      "API_URL": "https://markdown-blog-nextjs-boilerplate.brn.sh"
+    }
+  },
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    },
+    {
+      "src": "/lambdas/*.ts",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/sitemap.xml",
+      "dest": "/lambdas/sitemap.ts"
+    }
+  ]
+}
