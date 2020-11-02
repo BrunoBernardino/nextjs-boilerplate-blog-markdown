@@ -12,9 +12,9 @@ It runs UI tests with [Cypress](https://cypress.io), for which I'd recommend onl
 
 All pages are statically generated, meaning they'll be built via server for the first time they're requested (akin to SSR), but the subsequent requests will be as if a pre-rendered static page, incredibly fast (while still being updated after the initial load). This is good for SEO and also for showing up-to-date pages to clients quickly.
 
-Demo at [markdown-blog-nextjs-boilerplate.brn.sh](https://markdown-blog-nextjs-boilerplate.brn.sh).
+Demo at [markdown-blog-nextjs-boilerplate.onbrn.com](https://markdown-blog-nextjs-boilerplate.onbrn.com).
 
-See more boilerplates at [nextjs-boilerplates.brn.sh](https://nextjs-boilerplates.brn.sh).
+See more boilerplates at [nextjs-boilerplates.onbrn.com](https://nextjs-boilerplates.onbrn.com).
 
 ## Development
 
@@ -25,7 +25,7 @@ make pretty # prettifies the code
 make test # runs linting and tests (including UI tests via cypress)
 make test/update # runs tests, updating snapshots
 make test/cypress # opens cypress to manually run/watch tests (easier for writing and testing/updating them)
-make deploy # deploys to markdown-blog-nextjs-boilerplate.brn.sh (requires `vercel` to be installed globally)
+make deploy # deploys to markdown-blog-nextjs-boilerplate.onbrn.com (requires `vercel` to be installed globally)
 ```
 
 ## TODOs
