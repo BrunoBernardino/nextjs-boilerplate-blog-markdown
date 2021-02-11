@@ -1,12 +1,9 @@
+import { GetServerSideProps } from 'next';
 import { SitemapStream, streamToPromise } from 'sitemap';
-import { NowRequest, NowResponse } from '@vercel/node';
-import dotenv from 'dotenv';
 
-dotenv.config();
-
-import { getAllArticles } from '../lib/utils';
-import * as T from '../lib/types';
-import pages from './pages.json';
+import { getAllArticles } from 'lib/utils';
+import * as T from 'lib/types';
+import pages from 'lib/pages.json';
 
 type BuildSitemap = (items: T.Article[]) => Promise<any>;
 
@@ -38,12 +35,24 @@ const buildSitemap: BuildSitemap = (items) => {
   return streamToPromise(sitemap);
 };
 
-// @ts-ignore
-export default async (req: NowRequest, res: NowResponse) => {
-  const articles = getAllArticles(['slug', 'date']);
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  if (context && context.res) {
+    const { res } = context;
 
-  const sitemap = await buildSitemap(articles);
+    const articles = getAllArticles(['slug', 'date']);
 
-  res.setHeader('content-type', 'application/xml');
-  res.status(200).send(sitemap.toString());
+    const sitemap = await buildSitemap(articles);
+
+    res.setHeader('content-type', 'text/xml');
+    res.write(sitemap.toString());
+    res.end();
+  }
+
+  return {
+    props: {},
+  };
 };
+
+const SitemapPage = () => null;
+
+export default SitemapPage;

@@ -45,7 +45,7 @@ const IndexPage = ({ articles }: IndexPageProps) => {
           <Paragraph>
             This is a static markdown blog boilerplate for Next.js, with
             TypeScript, SASS/SCSS, Styled Components, Jest, ESLint, Prettier,
-            and deployed with Vercel.
+            and deployed with Serverless.
           </Paragraph>
           <Paragraph>
             It uses remark, remark-html, and gray-matter to parse Markdown into

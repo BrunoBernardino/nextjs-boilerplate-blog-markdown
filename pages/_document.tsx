@@ -42,6 +42,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#f4f4f4" />
           <link rel="icon" type="image/png" href="/images/favicon.png" />
           <link rel="apple-touch-icon" href="/images/favicon.png" />
+          <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
         </Head>
         <body>
           <Main />
