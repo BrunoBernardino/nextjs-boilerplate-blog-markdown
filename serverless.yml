@@ -2,10 +2,11 @@ service:
   name: brn-nextjs-boilerplate-blog-markdown
 
 myNextAppplication:
-  component: "@sls-next/serverless-component@1.18.0"
+  component: "@sls-next/serverless-component@1.19.0-alpha.31"
   inputs:
     domain: ["markdown-blog-nextjs-boilerplate", "onbrn.com"]
     build:
+      postBuildCommands: ["node scripts/copy-articles-into-lambda.js"]
       env:
         NODE_PATH: "/"
         API_URL: "https://markdown-blog-nextjs-boilerplate.onbrn.com"
